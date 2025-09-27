@@ -106,11 +106,15 @@ endmodule
 ```
 Function:
 y = i1 when sel = 1; otherwise, y = i0.
+![lab1](https://github.com/user-attachments/assets/3f5eb05a-1861-4bb8-940c-6ff9f2af87fb)
+
 Lab 2: Synthesis Using Yosys
 
 Synthesize the MUX using Yosys:
 
 Follow the standard Yosys synthesis flow to get your MUX into gate-level format.
+![lab2](https://github.com/user-attachments/assets/7a0cdc7c-cbbd-4943-bd3d-130a0d66b9b1)
+
 Lab 3: Gate-Level Simulation (GLS) of MUX
 
 Run Gate-Level Simulation to verify the functionality of the synthesized MUX:
@@ -118,6 +122,9 @@ Run Gate-Level Simulation to verify the functionality of the synthesized MUX:
 ```bash
 iverilog /path/to/primitives.v /path/to/sky130_fd_sc_hd.v ternary_operator_mux.v testbench.v
 ```
+
+![lab3](https://github.com/user-attachments/assets/9acf45b3-2e42-4ac1-88ae-b4a494cc8d87)
+
 Lab 4: Bad MUX Example (Common Pitfalls)
 
 Here’s a buggy version of the MUX design. Let’s spot the issues and learn how to fix them:
@@ -132,6 +139,9 @@ module bad_mux (input i0, input i1, input sel, output reg y);
   end
 endmodule
 ```
+
+![lab4](https://github.com/user-attachments/assets/4c2ede06-0605-4ff0-99cb-fc89844b89e4)
+
 Common Issues:
 
 Incomplete Sensitivity List: Should include i0, i1, and sel.
@@ -154,6 +164,7 @@ Lab 5: GLS of Bad MUX
 Now, let’s run GLS on the bad_mux and check for mismatches or warnings:
 
 You’ll likely see mismatches due to the improper assignments or sensitivity list.
+![lab5](https://github.com/user-attachments/assets/2e698404-27b5-4c4a-a811-41b5fc13db77)
 
 Lab 6: Blocking Assignment Caveat
 
@@ -182,11 +193,15 @@ always @ (*) begin
   d = x & c;
 end
 ```
+![lab6](https://github.com/user-attachments/assets/42cac594-0008-4c7b-b415-43e6565b6081)
+
 Lab 7: Synthesis of the Blocking Caveat Module
 
 Now, let’s synthesize the corrected module and check the output:
 
 Make sure your RTL code is logically sound before you synthesize!
+![lab7](https://github.com/user-attachments/assets/833bfacc-3b76-40fa-814c-47f0d783a6e0)
+
 
 5. 📝 Summary
 
